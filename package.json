@@ -1,0 +1,75 @@
+{
+  "name": "tokenization",
+  "version": "1.0.0",
+  "main": "ipfs-data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "John <ifdeifde@gmail.com>",
+  "license": "ISC",
+  "description": "Term project \"Data tokenization\".   Functionality:  1. Connect to MetaMask   2. Upload user JSON data to IPFS   3. Encrypt IPFS Hash from the previous step with AES key   4. Ecnrypt AES key with MetaMask public key   5. Store encrypted IPFS Hash and AES key on the blockchain   6. Retrieve user's encrypted IPFS Hash and AES key from the blockchain   7. Decrypt AES key with MetaMask private key   8. Decrypt IPFS Hash from the previous step with decrypted AES key   9. Retrieve the stored JSON data   10. Display all the steps on the page",
+  "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@metamask/eth-sig-util": "^8.1.2",
+    "@openzeppelin/contracts": "^5.2.0",
+    "@thirdweb-dev/storage": "^2.0.15",
+    "babel-loader": "^9.2.1",
+    "browserify": "^17.0.1",
+    "browserify-zlib": "^0.2.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.7",
+    "dotenv-webpack": "^8.1.0",
+    "ethereumjs-util": "^7.1.5",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "http-server": "^14.1.1",
+    "https-browserify": "^1.0.0",
+    "install": "^0.13.0",
+    "ipfs-http-client": "^60.0.1",
+    "npm": "^11.0.0",
+    "stream-http": "^3.2.0",
+    "thirdweb": "^5.80.0",
+    "web3": "^4.16.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-ignition": "^0.15.0",
+    "@nomicfoundation/hardhat-ignition-ethers": "^0.15.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@typechain/ethers-v6": "^0.5.0",
+    "@typechain/hardhat": "^9.0.0",
+    "@types/chai": "^5.0.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.1",
+    "chai": "^5.1.2",
+    "ethereum-waffle": "^4.0.10",
+    "ethers": "^6",
+    "hardhat": "^2.22.17",
+    "hardhat-gas-reporter": "^2.2.2",
+    "solidity-coverage": "^0.8.0",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.0",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ifde/Tokenization.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ifde/Tokenization/issues"
+  },
+  "homepage": "https://github.com/ifde/Tokenization#readme"
+}

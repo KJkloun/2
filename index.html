@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, maximum-scale=5.0" />
+  <meta name="description" content="exSpark - application for data uploading and blockchain" />
+  <title>exSpark</title>
+
+  <!-- Иконки Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <!-- Подключаем наши стили -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="webcrumbs">
+  <header>
+    <div class="brand">exSpark</div>
+    <button id="connectButton" class="metamask-button">
+      <span class="material-symbols-outlined">account_balance_wallet</span>
+      <span id="connectText">Connect Wallet</span>
+    </button>
+  </header>
+
+  <!-- Экран загрузки, по умолчанию скрыт -->
+  <div class="loading-screen" id="loadingScreen" style="display:none;">
+    <div class="spinner"></div>
+    <p>Uploading data...</p>
+  </div>
+
+  <div class="main-content">
+    <nav class="sidebar">
+      <!-- Кнопки для загрузки / выгрузки JSON -->
+      <div class="sidebar-btn" id="btnBrowse">
+        <span class="material-symbols-outlined">upload_file</span>
+        <div class="sidebar-btn-label">Upload from file</div>
+      </div>
+      <div class="sidebar-btn" id="btnUseDefault">
+        <span class="material-symbols-outlined">token</span>
+        <div class="sidebar-btn-label">Test data</div>
+      </div>
+      <div class="sidebar-btn" id="btnClearData">
+        <span class="material-symbols-outlined">clear</span>
+        <div class="sidebar-btn-label">Clear data</div>
+      </div>
+
+      <!-- Кнопки для перехода к аналитике (если вам нужно) -->
+      <div class="sidebar-btn" id="btnAnalytics">
+        <span class="material-symbols-outlined">bar_chart</span>
+        <div class="sidebar-btn-label">Towards analytics</div>
+      </div>
+
+      <!-- Кнопки, соответствующие логике из первого проекта -->
+      <div class="sidebar-btn" id="btnUploadToChain">
+        <span class="material-symbols-outlined">cloud_upload</span>
+        <div class="sidebar-btn-label">Upload to Chain</div>
+      </div>
+      <div class="sidebar-btn" id="btnRetrieveFromChain">
+        <span class="material-symbols-outlined">cloud_download</span>
+        <div class="sidebar-btn-label">Unload from Chain</div>
+      </div>
+      <div class="sidebar-btn" id="btnListUsers">
+        <span class="material-symbols-outlined">download</span>
+        <div class="sidebar-btn-label">Unload all data from Chain</div>
+      </div>
+      <div class="sidebar-btn" id="btnClearUserData">
+        <span class="material-symbols-outlined">delete</span>
+        <div class="sidebar-btn-label">Clear My Data</div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="upload-section">
+        <h2>Data to Upload</h2>
+        <div id="dropzone">Drag and drop the data file (JSON) here</div>
+        <textarea id="dataInput" placeholder="JSON-data..."></textarea>
+      </div>
+
+      <section class="section">
+        <div class="section-header">
+          <h2>Uploaded data</h2>
+          <button class="action-button" id="exportButton">
+            <span class="material-symbols-outlined">download</span>
+            Export
+          </button>
+        </div>
+        <table>
+          <thead>
+          <tr>
+            <th>Session ID</th>
+            <th>Details</th>
+          </tr>
+          </thead>
+          <tbody id="dataTable"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</div>
+
+<!-- Подключаем наш сгенерированный бандл -->
+<script src="dist/bundle.js"></script>
+</body>
+</html>
