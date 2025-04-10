@@ -1,66 +1,79 @@
 # Tokenization
-Term project "Data tokenization".  
-Functionality: 
-1. Connect to MetaMask  
-2. Upload user JSON data to IPFS  
-3. Encrypt IPFS Hash from the previous step with AES key  
-4. Ecnrypt AES key with MetaMask public key  
-5. Store encrypted IPFS Hash and AES key on the blockchain  
-6. Retrieve user's encrypted IPFS Hash and AES key from the blockchain  
-7. Decrypt AES key with MetaMask private key  
-8. Decrypt IPFS Hash from the previous step with decrypted AES key  
-9. Retrieve the stored JSON data  
-10. Display all the steps on the page  
 
-Or in a nutshell:  
-1. Connects to MetaMask  
-2. Stores user's JSON data on the blockchain in an encrypted way  
-3. Retirieves user's JSON data from the blockchain and decrypts it  
+**О проекте**
 
-Here's a quick video to show the funtionality (doesn't have sound):  
-<video controls src="Functionality.mp4" title="Title"></video>
+"Tokenization" — это амбициозный групповой проект, посвященный инновационному процессу токенизации данных. В настоящее время проект полностью завершен. Моя основная роль заключалась в создании и разработке фронтенд-части, а также в её тесной интеграции с бэкендом для обеспечения плавной и эффективной работы приложения.
 
-# Local set up guide 
+**Функциональность**
 
-1. Clone repository locally:  
-`git clone https://github.com/ifde/Tokenization.git`  
+Проект предоставляет пользователям следующие ключевые возможности:
 
-2. Install the requirments:  
-`yarn install`  
+1. **Подключение к MetaMask**: Обеспечивает безопасную аутентификацию и взаимодействие с блокчейном через популярный криптокошелек.
+2. **Загрузка JSON-данных в IPFS**: Позволяет пользователям загружать свои JSON-файлы в распределенную файловую систему IPFS, обеспечивая децентрализованное хранение.
+3. **Шифрование IPFS-хэша с помощью AES**: Гарантирует, что хэш, полученный из IPFS, зашифрован с использованием надежного алгоритма AES для дополнительной безопасности.
+4. **Шифрование AES-ключа публичным ключом MetaMask**: Обеспечивает защиту AES-ключа путем его шифрования с использованием публичного ключа пользователя из MetaMask.
+5. **Сохранение зашифрованных данных в блокчейне**: Зашифрованные IPFS-хэш и AES-ключ надежно хранятся в блокчейне, обеспечивая их неизменность и доступность.
+6. **Извлечение и дешифрование данных**: Пользователи могут получать свои зашифрованные данные из блокчейна, расшифровывать AES-ключ с помощью приватного ключа MetaMask, а затем использовать его для дешифрования IPFS-хэша и получения исходных JSON-данных.
+7. **Пошаговое отображение процессов**: Каждый этап вышеописанных операций визуализируется на веб-странице, обеспечивая прозрачность и удобство использования.
 
-3. Start a local blockchain node:  
-`npx hardhat node`  
+**Краткое описание**
 
-You will see a list of available wallets, pick the first one (or any other one if you wish)  
-Copy its Private Key and insert into `WALLET_PRIVATE_KEY` in `.env`  
+- **Интеграция с MetaMask** для безопасного взаимодействия с блокчейном.
+- **Безопасное хранение пользовательских JSON-данных** в блокчейне с использованием передовых методов шифрования.
+- **Извлечение и расшифровка данных**, обеспечивающие доступ к информации в её исходном виде.
 
-Note: for following commands, open up a new terminal in VSCode.  
-To kill the proccess, use CTRL+C  
+**Инструкция по запуску проекта**
 
-4. Deploy the contract on a local blockchain:  
-`npx hardhat run scripts/Deploy.js --network localhost`  
-You will see deployed contract's address and ABI. 
-Insert `CONTRACT_ABI` into `main.js` and `CONTRACT_ADDRESS` into `.env`  
+Чтобы развернуть и запустить проект локально, выполните следующие шаги:
 
-5. Create an account on thirdweb and create a project there  
-Add your thridweb Client ID in a THIRDWEB_CLIENT_ID variable in '.env'   
+1. **Клонирование репозитория**:
 
-6. Create / update a bundle file after making changes in `main.js` file.  
-`yarn run webpack`  
+   ```bash
+   git clone https://github.com/ifde/Tokenization.git
+   ```
 
-Basically, it creates a file that contains all the code from the main.js file and its dependencies.  
-And it can run directly in the browser without Node.js.  
-We include bundle.js file in the index.html file.  
+2. **Установка зависимостей**:
 
-Note: make sure to update your bundle file each time after making changes in `main.js` file.  
+   ```bash
+   yarn install
+   ```
 
-7. Start a local https-server:  
-`npx http-server`  
-You will see something like `http://127.0.0.1:8080` - paste in your browser and you're all done! 
-Now you can play around with it.  
+3. **Запуск локального блокчейн-узла**:
 
-Note: for following commands, open up a new terminal in VSCode.  
-To kill the proccess, use CTRL+C  
+   ```bash
+   npx hardhat node
+   ```
 
+   После запуска появится список доступных кошельков. Выберите один из них, скопируйте его приватный ключ и вставьте в переменную `WALLET_PRIVATE_KEY` в файле `.env`.
 
+4. **Развертывание смарт-контракта**:
 
+   В новом терминале выполните команду:
+
+   ```bash
+   npx hardhat run scripts/Deploy.js --network localhost
+   ```
+
+   После успешного развертывания вы получите адрес контракта и его ABI. Вставьте `CONTRACT_ABI` в файл `main.js`, а `CONTRACT_ADDRESS` в `.env`.
+
+5. **Настройка thirdweb**:
+
+   Создайте аккаунт на [thirdweb](https://thirdweb.com/) и добавьте ваш `THIRDWEB_CLIENT_ID` в файл `.env`.
+
+6. **Сборка бандла**:
+
+   После внесения изменений в `main.js` выполните:
+
+   ```bash
+   yarn run webpack
+   ```
+
+7. **Запуск локального HTTPS-сервера**:
+
+   ```bash
+   npx http-server
+   ```
+
+   Перейдите по указанному адресу (например, `http://127.0.0.1:8080`) в вашем браузере, чтобы начать работу с приложением.
+
+Следуя этим шагам, вы сможете успешно развернуть и протестировать функциональность проекта "Tokenization" на вашем локальном компьютере. 
