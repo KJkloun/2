@@ -29,7 +29,7 @@
 1. **Клонирование репозитория**:
 
    ```bash
-   git clone https://github.com/ifde/Tokenization.git
+   git clone https://github.com/KJkloun/2.git
    ```
 
 2. **Установка зависимостей**:
